@@ -28,7 +28,7 @@ jobs:
 
       - name: 테스트 및 빌드하기
         run: |
-          chmod +x ./gradlew --warning-mode all
+          chmod +x ./gradlew
           ./gradlew clean build --warning-mode all
 
         # 현재 폴더로 옮기면서 이름만 변경한다
