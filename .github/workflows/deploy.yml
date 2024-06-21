@@ -24,12 +24,12 @@ jobs:
 
       - name: applcation.yml 추가
         run:
-          echo ${{secrets.APPLICATION_YML}} >> ./src/main/resources/application.yml
+          echo ${{secrets.APPLICATION_YML}} |base64 --decode >> ./src/main/resources/application.yml
 
       - name: 테스트 및 빌드하기
         run: |
           chmod +x ./gradlew
-          ./gradlew clean build --warning-mode all
+          ./gradlew clean build
 
         # 현재 폴더로 옮기면서 이름만 변경한다
       - name: jar 파일명 변경하기
