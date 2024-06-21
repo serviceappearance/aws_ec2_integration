@@ -33,7 +33,8 @@ jobs:
 
         # 현재 폴더로 옮기면서 이름만 변경한다
       - name: jar 파일명 변경하기
-        run: mv ./build/libs/*SNAPSHOT.jar ./app.jar
+        run:
+          mv ./build/libs/*SNAPSHOT.jar ./app.jar
 
       - name: EC2로 jar 파일 전송하기
         uses: appleboy/scp-action@v0.1.7
