@@ -26,4 +26,4 @@ jobs:
       - name: Secret 변수 사용하기
         run: |
           echo ${{ secrets.USERID }}
-          echo ${{ secretes.PASSWORD }}
+          echo ${{ secrets.PASSWORD }}
