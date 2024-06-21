@@ -1,14 +1,33 @@
 name: Github Actions 실행하기
 
+# 필수 요소들
+# trigger
 on:
   push:
     branches:
       - main
 
+# 실행할 작업
 jobs:
   My-First-CICD-Job:
     runs-on: ubuntu-latest
 
+    # 작업이 시작되고 할 일
     steps:
       - name: simple-action-test
         run: echo "This is the first cicd step"
+
+      - name: multiple-commands
+        run:
+          echo "multi -1"
+          echo "multi -2"
+
+      - name: Github 변수 사용하기
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+
+      - name: Secret 변수 사용하기
+        run: |
+          echo ${{ secrets.USERID }}
+          echo ${{ secretes.PASSWORD }}
