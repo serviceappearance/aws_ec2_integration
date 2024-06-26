@@ -42,6 +42,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
+
       - name: Docker 이미지 생성하기, tag 붙이기
         run: | 
           docker build -t web-server .
